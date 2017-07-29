@@ -24,7 +24,7 @@ public class StylusTest extends SelenideTestBase{
     @Test
     public void stylusTest() {
         System.setProperty("webdriver.chrome.driver",
-                "C:\\Temp\\Programming\\chromedriver.exe");//NEED TO MAKE PATH FOR UBUNTU !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                "/home/mykhailo/Downloads/chromedriver");
 
         webDriver = new ChromeDriver();
         webDriver.manage().window().maximize();

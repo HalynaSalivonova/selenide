@@ -16,7 +16,7 @@ public class AlertTest extends SelenideTestBase {
     public void alertTest() {
         open(alertExample);
         switchTo().frame("iframeResult");
-        $(By.xpath("TESThtml/body/button")).click();
+        $(By.xpath("html/body/button")).click();
         switchTo().alert().dismiss();
         $(By.id("demo")).shouldHave(text(cancelled));
     }
