@@ -10,7 +10,7 @@ import org.testng.annotations.Listeners;
 
 import static com.codeborne.selenide.WebDriverRunner.CHROME;
 
-@Listeners({selenium.core.TestListener.class})
+@Listeners({TestListener.class})
 
 public class SelenideTestBase {
 
