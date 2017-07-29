@@ -4,6 +4,7 @@ import com.codeborne.selenide.WebDriverRunner;
 import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import ru.yandex.qatools.allure.annotations.Title;
 import selenide.core.SelenideTestBase;
 import selenide.pages.OpenEnglish.LoginPage;
 import selenide.pages.OpenEnglish.MainPage;
@@ -12,18 +13,19 @@ import selenide.pages.OpenEnglish.PasswordReset;
 import static com.codeborne.selenide.Selenide.*;
 
 public class OpenEnglishTest extends SelenideTestBase {
-    private String loginScreenLink = "https://learningplatform.stg.openenglish.com/login.html";
-    //https://learningplatform.openenglish.com/login.html
+    //private String loginScreenLink = "https://learningplatform.stg.openenglish.com/login.html";
+    private String loginScreenLink = "https://learningplatform.openenglish.com/login.html";
+
     private String login = "shiosaky@gmail.com";
     private String password = "Test123";
     private String welcomeScreen = "https://learningplatform.stg.openenglish.com/";
-    private String loginValidationMessage = "El email que usted ingresó no ha sido reconocido. Por favor, inténtelo de nuevo.";
+    private String loginValidationMessage = "The email you entered is not recognized. Please try again.";
     private String passwordValidationMessage = "Parece que hay un error en la contraseña. Por favor, inténtelo de nuevo.";
     private String resetScreen = "https://learningplatform.stg.openenglish.com/recovery.html";
     private String mainScreen = "https://learningplatform.stg.openenglish.com/index.html";
 //    private String progressScreen = "https://learningplatform.stg.openenglish.com/progress/profile.html";
 //    private String feedbackScreen = "https://learningplatform.stg.openenglish.com/progress/teacher-feedback.html";
-
+    @Title("Login with valid data")
     @Test
     public void loginWithValidCredentials() {
         open(loginScreenLink);

@@ -3,9 +3,14 @@ package selenium.TestsWithoutPOP;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
+import ru.yandex.qatools.allure.annotations.Features;
+import ru.yandex.qatools.allure.annotations.Stories;
 import selenium.core.WebDriverTestBase;
 import java.util.List;
 import static junit.framework.TestCase.assertTrue;
+
+@Features("Google search")
+@Stories({"WEB-100700"})
 
 public class GoogleSearchTest extends WebDriverTestBase{
 

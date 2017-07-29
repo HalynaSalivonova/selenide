@@ -2,6 +2,9 @@ package selenide.google;
 
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
+import ru.yandex.qatools.allure.annotations.Features;
+import ru.yandex.qatools.allure.annotations.Stories;
+import ru.yandex.qatools.allure.annotations.Title;
 import selenide.core.SelenideTestBase;
 import selenide.pages.Google.GoogleSearchPage;
 import selenide.pages.Google.GoogleSearchResultPage;
@@ -10,6 +13,8 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 
+@Features("Google search")
+@Stories({"WEB-100500"})
 public class GoogleTest extends SelenideTestBase {
     private String google = "https://www.google.com/ncr";
     private String searchText = "selenide";
@@ -37,6 +42,7 @@ public class GoogleTest extends SelenideTestBase {
                 text("selenide.org"));
     }
 //with POP and incapsulation
+    @Title("Perform search via google")
     @Test
     public void searchInGoogleWithPageObjectTest() {
         open(google);
