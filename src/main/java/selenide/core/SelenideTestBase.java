@@ -7,8 +7,8 @@ import io.github.bonigarcia.wdm.FirefoxDriverManager;
 import io.github.bonigarcia.wdm.InternetExplorerDriverManager;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
-
 import static com.codeborne.selenide.WebDriverRunner.CHROME;
+import static selenide.util.PropertiesCache.getProperty;
 
 @Listeners({TestListener.class})
 
@@ -34,5 +34,6 @@ public class SelenideTestBase {
         Configuration.browser = WebDriverRunner.CHROME;
         // если упадёт тест, браузер не закроется
         //Configuration.holdBrowserOpen = true;
+        Configuration.timeout = Long.parseLong(getProperty("timeout"));
     }
 }
